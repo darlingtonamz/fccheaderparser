@@ -1,55 +1,41 @@
 'use strict';
 
-function clickHandler (db) {
-   var clicks = db.collection('clicks');
+var Users = require('../models/users.js');
 
-   this.getClicks = function (req, res) {
+function ClickHandler () {
 
-      var clickProjection = { '_id': false };
+	this.getClicks = function (req, res) {
+		Users
+			.findOne({ 'github.id': req.user.github.id }, { '_id': false })
+			.exec(function (err, result) {
+				if (err) { throw err; }
 
-      clicks.findOne({}, clickProjection, function (err, result) {
-         if (err) {
-            throw err;
-         }
+				res.json(result.nbrClicks);
+			});
+	};
 
-         if (result) {
-            res.json(result);
-         } else {
-            clicks.insert({ 'clicks': 0 }, function (err) {
-               if (err) {
-                  throw err;
-               }
+	this.addClick = function (req, res) {
+		Users
+			.findOneAndUpdate({ 'github.id': req.user.github.id }, { $inc: { 'nbrClicks.clicks': 1 } })
+			.exec(function (err, result) {
+					if (err) { throw err; }
 
-               clicks.findOne({}, clickProjection, function (err, doc) {
-                  if (err) {
-                     throw err;
-                  }
+					res.json(result.nbrClicks);
+				}
+			);
+	};
 
-                  res.json(doc);
-               });
-            });
-         }
-      });
-   };
+	this.resetClicks = function (req, res) {
+		Users
+			.findOneAndUpdate({ 'github.id': req.user.github.id }, { 'nbrClicks.clicks': 0 })
+			.exec(function (err, result) {
+					if (err) { throw err; }
 
-   this.addClick = function (req, res) {
-      clicks.findAndModify({}, { '_id': 1 }, { $inc: { 'clicks': 1 }}, function (err, result) {
-         if (err) {
-            throw err;
-         }
+					res.json(result.nbrClicks);
+				}
+			);
+	};
 
-         res.json(result);
-      });
-   };
-
-   this.resetClicks = function (req, res) {
-      clicks.update({}, { 'clicks': 0 }, function (err, result) {
-         if (err) {
-            throw err;
-         }
-         res.json(result);
-      });
-   };
 }
 
-module.exports = clickHandler;
+module.exports = ClickHandler;

@@ -1,30 +1,34 @@
 {
-  "name": "clementinejs",
-  "version": "1.0.2",
-  "description": "A light-weight MEAN stack boilerplate.",
+  "name": "clementinejs-fcc",
+  "version": "1.0.1",
+  "description": "The elegant and lightweight boilerplate for full stack JavaScript.",
   "main": "server.js",
-  "scripts": {
-    "start": "gulp"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/johnstonbl01/clementinejs"
+    "url": "git+https://github.com/johnstonbl01/clementinejs-fcc"
   },
-  "homepage": "http://johnstonbl01.github.io/clementinejs/",
-  "bugs": "https://github.com/johnstonbl01/clementinejs/issues",
+  "homepage": "http://www.clementinejs.com/",
+  "bugs": "https://github.com/johnstonbl01/clementinejs-fcc/issues",
   "keywords": [
-    "MEAN",
     "MongoDB",
+    "Mongoose",
+    "full stack",
     "Express",
-    "Angular",
     "Node",
     "javascript",
     "boilerplate"
   ],
+  "scripts": {
+  "start": "node server.js"
+  },
   "author": "Blake Johnston",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.13.3",
-    "mongodb": "^2.0.42"
+    "dotenv": "^1.2.0",
+    "express": "^4.12.4",
+    "express-session": "^1.11.3",
+    "mongoose": "^4.1.0",
+    "passport": "^0.3.0",
+    "passport-github": "^1.0.0"
   }
 }

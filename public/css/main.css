@@ -1,65 +1,41 @@
-/****** Main Styling ******/
-
-body {
-	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-}
-
-p {
-	margin: 8px 0 0 0;
-}
-
-.container p {
-	text-align: center;
-	padding: 0;
-}
-
-/****** Logo Div Styling ******/
-
-img {
-	margin: 20px auto 0 auto;
-	display: block;
+body{
+  width: 100%;
 }
 
 .clementine-text { /* Styling for the Clementine.js text */
-	padding: 0;
-	margin: -25px 0 0 0;
+	padding: 10px;
+	margin: -20px -10px 10px -10px;
 	font-weight: 500;
 	font-size: 60px;
-	color: #FFA000;
+  font-family: sans-serif;
+	color: #fff;
+  background: #006064;
+  box-shadow:0 1px 2px #aaa;
 }
 
-/****** Click Styling ******/
-
-.btn-container {	/* Styling for the div that contains the buttons */
-	margin: -10px auto 0 auto;
-	text-align: center;
+.card {
+  padding:1.5rem;
+  box-shadow:0 1px 2px #aaa;
+  background:white;
+  margin:0 1rem 1rem;
+  border-radius:3px;
+  user-select:none;
+  animation:fly-in-from-left .5s 1s ease both;
+  transform-origin:top left;
+  transition: all 0.2s ease;
 }
 
-.btn {	/* Styling for buttons */
-	margin: 0 8px;
-	color: white;
-	background-color: #00BCD4;
-	display: inline-block;
-	border: 0;
-	font-size: 14px;
-	border-radius: 3px;
-	padding: 10px 5px;
-	width: 100px;
-	font-weight: 500;
+.mid-size{
+  width: 600px;
+  font-size: 18px;
 }
 
-.btn:focus {	/* Remove outline when hovering over button */
-	outline: none;
+.center{
+  margin: auto;
 }
 
-.btn:active {	/* Scale the button down by 10% when clicking on button */
-	transform: scale(0.9, 0.9);
-	-webkit-transform: scale(0.9, 0.9);
-	-moz-transform: scale(0.9, 0.9);
-}
-
-.btn-delete {	/* Styling for delete button */
-	background-color: #ECEFF1;
-	color: #212121;
+.card:hover{
+  -webkit-box-shadow:0 12px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  -moz-box-shadow:0 12px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  box-shadow:0 12px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }

@@ -2,29 +2,29 @@
 
 <html>
 
-   <head>
-      <title>Clementine.js - The elegant and lightweight full-stack boilerplate.</title>
-      <link href="http://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet" type="text/css">
-      <link href="/public/css/main.css" rel="stylesheet" type="text/css">  
-   </head>
+	<head>
+		<title>Clementine.js - The elegant and lightweight full stack JavaScript boilerplate.</title>
 
-   <body>
-      <div class="container">
-         <img src="/public/img/clementine_150.png" />
-         <br />
-         <p class="clementine-text">Clementine.js</p>
-      </div>
+		<link href="/public/css/main.css" rel="stylesheet" type="text/css">
+	</head>
 
-      <div class="container">
-         <p>You have clicked the button <span id="click-nbr"></span> times.</p>   
-         <br />
-         <div class="btn-container">
-            <button type="submit" class="btn btn-add">CLICK ME!</button>
-            <button class="btn btn-delete">RESET</button>
-         </div>
-      </div>
+	<body>
+			<div class="clementine-text">API Basejump: Timestamp microservice </div>
+			<div class="card mid-size center">
+				<h3>Example usage:</h3><br>
+				<a href="https://fcctime.herokuapp.com/December%2015,%202015">
+					https://fcctime.herokuapp.com/December%2015,%202015
+				</a><br>
+				<a href="https://fcctime.herokuapp.com/1450137600">
+					https://fcctime.herokuapp.com/1450137600
+				</a><br>
+				<h3>Example output:</h3><br>
+				{ "unix": 1450137600, "natural": "December 15, 2015" }
+			</div>
 
-      <script type="text/javascript" src="/controllers/clickController.client.js"></script>   
-   </body>
+		<!-- <script type="text/javascript" src="common/ajax-functions.js"></script>
+		<script type="text/javascript" src="controllers/clickController.client.js"></script>
+		<script type="text/javascript" src="controllers/userController.client.js"></script> -->
+	</body>
 
 </html>
