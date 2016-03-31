@@ -7,8 +7,9 @@ module.exports = function (app, passport) {
 	app.route('/')
 		.get(function (req, res) {
 			var agent = req.headers["user-agent"];
+			var ip = req.ip;
 			var out = {
-			    "ipaddress": req.ip,
+			    "ipaddress": (req.ip.startsWith(":fff::") ? ip.substring(6, ip.length) : ip) ,
 			    "language": req.headers["accept-language"].split(",")[0],
 			    "software": agent.slice(agent.indexOf("(")+1, agent.indexOf(")"))
 			}
