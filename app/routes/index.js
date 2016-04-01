@@ -7,7 +7,7 @@ module.exports = function (app, passport) {
 	app.route('/')
 		.get(function (req, res) {
 			var agent = req.headers["user-agent"];
-			var ip = req.ip;
+			var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 			var out = {
 			    "ipaddress": (ip.startsWith("::ffff:") ? ip.substring(7, ip.length) : ip) ,
 			    "language": req.headers["accept-language"].split(",")[0],
